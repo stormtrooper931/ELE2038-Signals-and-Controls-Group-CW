@@ -1,0 +1,10 @@
+import numpy as np
+from scipy import signal
+
+# Coefficients of the characteristic equation
+a = [1, 0.736, 0.92586, 0]
+
+# Find the roots (poles) of the characteristic equation
+roots = np.roots(a)
+print("Roots (Poles) of the Transfer Function:")
+print(roots)
