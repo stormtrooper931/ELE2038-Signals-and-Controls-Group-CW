@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import signal
+
+# Define the coefficients of the transfer function
+numerator = [1.15101, 0.1731051]
+denominator = [1, 0.736, 0.92586, 0]
+
+# Create a transfer function representation
+sys = signal.TransferFunction(numerator, denominator)
+
+# Time array for plotting
+t = np.linspace(0, 10, 1000)
+
+# Impulse response
+t_impulse, y_impulse = signal.impulse(sys, T=t)
+
+# Plotting
+plt.plot(t_impulse, y_impulse)
+plt.title('Impulse Response')
+plt.xlabel('Time')
+plt.ylabel('Amplitude')
+plt.grid(True)
+plt.show()
